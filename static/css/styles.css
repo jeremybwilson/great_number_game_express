@@ -1,0 +1,63 @@
+.container {
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 1em;
+}
+
+section, label {
+    text-align: center;
+}
+
+h1, h2, h3, h4, h5, p {
+    display: block;
+    width: 100%;
+}
+
+nav { 
+    width: 100%;
+}
+
+label, form, input, select, textarea, select.form-control {
+    width: 49%;
+}
+
+select.form-control{
+    display: inline-block;
+}
+
+
+.col.red, .col.error, .result_log{
+    color: red;
+    font-weight: bold;
+    text-align: center;
+}
+
+.high, .low, .win {
+    border: 1px solid black;
+    color: white;
+    padding: 10px 25px;
+    width: auto;
+    margin: 0 auto 10px;
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+}
+
+.high {
+    background-color: red;
+}
+
+.low {
+    background-color: orange;
+}
+
+.win {
+    background-color: green;
+}
+
+form {
+    margin: 0 auto;
+}
+
+.result_log {
+    display: block;
+}

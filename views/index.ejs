@@ -1,0 +1,32 @@
+<% include partials/header %>
+            <div class="row">
+                <div class="col">
+                    <section>
+                        <h1>Welcome to the <%= title %></h1>
+                        <p>I am thinking of a number between 1 and 100</p>
+                        <p>Take a guess!  <% if (status != 'none') { %> You guessed <%= guessed %>  <% } %></p>
+                        <% if (status == 'high') { %>
+                            <label>Your guess was too <%= status %>.</label>
+                            <h2 class="high">Too High Guy!</h2>
+                        <% } else if (status == 'low') { %>
+                            <label>Your guess was too <%= status %>.</label>
+                            <h2 class="low">Too Low Jabroni!</h2>
+                        <% } else if (status == 'correct') { %>
+                            <label>Your guess was <%= status %>.</label>
+                            <h2 class="win"><%= guessed %> was the correct number. <br /> Winner Winner Chicken Dinner!</h2>
+                            <form action="/reset" method="POST">
+                              <div class="form-group">
+                                <button type="submit" class="btn btn-primary">Play again!</button>
+                              </div>
+                            </form>
+                        <% } %>
+                        <form action="/guess" method="POST">
+                        <div class="form-group">
+                            <input type="number" name="guessValue" placeholder="Enter your guess here">
+                            <button type="submit" class="btn btn-primary btn-sm">Submit</button>
+                        </div>
+                        </form>
+                    </section>
+                </div>
+            </div>
+<% include partials/footer %>
